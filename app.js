@@ -2,6 +2,7 @@ const express= require ("express");
 const helmet = require('helmet');
 const mongoose = require('mongoose');
 require("dotenv").config();
+const cors = require('cors');
 
 
 const session = require('express-session')
@@ -26,7 +27,7 @@ app=express();
 app.use(helmet())
 
 mongoose.Promise = global.Promise;
-mongoose.connect(process.env.DATABASE,{
+mongoose.connect(process.env.MONGODB_URI,{
     useNewUrlParser:true,
     useCreateIndex:true
 }).then(()=>console.log("Database Connected"));
@@ -40,6 +41,7 @@ mongoose.connect(process.env.DATABASE,{
 app.use(morgan('dev'));
 app.use(bodyParser.json());
 app.use(cookieParser());
+app.use(cors());
 
 const sessionStore = new MongoStore({
   mongooseConnection: mongoose.connection
