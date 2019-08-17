@@ -5,7 +5,7 @@ var uuid=require("uuid")
 
 //mongoose.connect('localhost:27017/sterlin');
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost:27017/sterlin',{
+mongoose.connect('mongodb://localhost:27017/heroku_stksppzn',{
     useNewUrlParser:true,
     useCreateIndex:true
 }).then(()=>console.log("Data Seeded"));
