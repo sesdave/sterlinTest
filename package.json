@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "preinstall": "sudo npm install pm2 -g",
+    "preinstall": "npm install pm2 -g",
     "start": "pm2 start start.js",
     "test": "jest",
     "test:watch": "jest --watch"
