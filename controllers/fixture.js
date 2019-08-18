@@ -17,12 +17,27 @@ exports.fixtureById=(req, res, next, id)=>{
 
 };
 
+exports.fixtureByUrlId=(req, res, next, urlid)=>{
+    Fixture.find({urlid:urlid}).exec((err, data)=>{
+        if(err||!data){
+            res.status(400).json({
+                err:"Fixture may have been deleted"
+            });
+        }
+        req.fixtureurl=data;
+        next();
+    });
+    
+
+};
+
 exports.CreateFixture=(req, res)=>{
     let radomId=uuidv.v4()
-    const url="localhost/"+radomId;
+    const url="http://127.0.0.1:4000/api/generate_feature/"+radomId;
     console.log("req.body", req.body);
     const fixture=new Fixture(req.body)
     fixture.url=url;
+    fixture.urlid=radomId;
     fixture.save((err, data)=>{
         if(err){
             res.status(400).json({
@@ -38,6 +53,7 @@ exports.CreateFixture=(req, res)=>{
 };
 exports.readFixture=(req, res)=>{
     const fixture=req.fixture;
+
     res.json({
         fixture
     });
@@ -98,6 +114,14 @@ exports.CompletedFixture=(req, res)=>{
     });
 
 };
+exports.GeneratedFixture=(req, res)=>{
+    const fixtureurl=req.fixtureurl;
+    fixtureurl.urlid=undefined;
+    res.json({
+        fixtureurl
+    });
+};
+
 exports.ListFixtures=(req, res)=>{
     Fixture.find().exec((err, fixture)=>{
         if(err||!fixture){

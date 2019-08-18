@@ -17,7 +17,8 @@ const FixtureSchema=new mongoose.Schema({
     url:{
         type:String,
         default:"urldefault"
-    }
+    },
+    urlid:String,
 
 }, {timestamps:true});
 

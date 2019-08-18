@@ -13,9 +13,11 @@ const {
         updateFixture, 
         DeleteFixture, 
         PendingFixture, 
-        CompletedFixture, 
+        CompletedFixture,
+        GeneratedFixture, 
         ListFixtures,
         searchFixtures,
+        fixtureByUrlId,
         fixtureById
      }=require("../controllers/fixture")
 
@@ -25,11 +27,12 @@ router.put("/fixtures/:fixtureId/:userId",isAuth,isAdmin, updateFixture);
 router.delete("/fixtures/:fixtureId/:userId",isAuth,isAdmin, DeleteFixture);
 router.get("/pending_fixtures", isAuth, PendingFixture);
 router.get("/completed_fixtures",isAuth, CompletedFixture);
+router.get("/generate_feature/:userUrlId", GeneratedFixture);
 router.get("/all_fixtures", isAuth , ListFixtures);
 router.get("/search_fixtures", searchFixtures);
 
 router.param("fixtureId", fixtureById);
+router.param("userUrlId", fixtureByUrlId);
 router.param("userId", userById);
-
 
 module.exports=router;
