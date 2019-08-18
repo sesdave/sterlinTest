@@ -1,1 +1,1 @@
-web:nodemon start.js
+web:node start.js
