@@ -4,7 +4,7 @@
   "description": "",
   "scripts": {
     "preinstall": "npm install pm2 -g",
-    "start": "pm2-runtime start start.js",
+    "start": "pm2 start start.js",
     "test": "jest",
     "test:watch": "jest --watch"
   },
