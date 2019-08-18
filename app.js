@@ -5,7 +5,7 @@ require("dotenv").config();
 const cors = require('cors');
 
 
-const session = require('express-session')
+//const session = require('express-session')
 const MongoStore = require('connect-mongo')(session)
 const tokenSecret = process.env.tokenSecret || 'please set a real secret in proudction'
 
@@ -43,7 +43,7 @@ app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(cors());
 
-const sessionStore = new MongoStore({
+/* const sessionStore = new MongoStore({
   mongooseConnection: mongoose.connection
 })
 //app.use(validationResult());
@@ -56,7 +56,7 @@ app.use(session({
     secure: true
   }
 }))
-
+ */
 app.use(passport.initialize())
 app.use(passport.session())
 
