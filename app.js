@@ -4,9 +4,8 @@ const mongoose = require('mongoose');
 require("dotenv").config();
 const cors = require('cors');
 
-
-const session = require('express-session')
-const MongoStore = require('connect-mongo')(session)
+const session = require('express-session');
+const MongoStore = require('connect-mongo')(session);
 const tokenSecret = process.env.tokenSecret || 'please set a real secret in proudction'
 
 
