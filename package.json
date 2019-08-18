@@ -8,7 +8,7 @@
   },
   "scripts": {
     "preinstall": "npm install pm2 -g",
-    "start": "pm2 start start.js",
+    "start": "node start.js",
     "test": "jest",
     "test:watch": "jest --watch"
   },
