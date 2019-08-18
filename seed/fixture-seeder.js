@@ -31,7 +31,7 @@ var fixture=[
 
 var done=0;
 for (var i=0;i<fixture.length; i++){
-    fixture[i].url="http://127.0.0.1:4000/api/generate_feature/"+uuid.v4();
+    fixture[i].url="https://sterlingtest.herokuapp.com/api/generate_feature/"+uuid.v4();
     fixture[i].urlid= uuid.v4();
     fixture[i].save(function(err, result){
         done++;
