@@ -10,13 +10,11 @@ mongoose.connect('mongodb://localhost:27017/heroku_stksppzn',{
     useCreateIndex:true
 }).then(()=>console.log("Data Seeded"));
 
-var unidef=uuid.v4();
-var otheruui="http://localhost/"+unidef;
+
 var fixture=[
     new Fixture({
         name:"FixtureZ",
         status:1,
-        url:otheruui
     }),
     new Fixture({
         name:"FixtureY",
@@ -24,6 +22,43 @@ var fixture=[
     }),
     new Fixture({
         name:"FixtureX",
+        status:1,
+    }),
+    new Fixture({
+        name:"FixtureA",
+        status:1,
+    }),
+    new Fixture({
+        name:"FixtureB",
+        status:0,
+    }),
+    new Fixture({
+        name:"FixtureC",
+        status:1,
+    }),
+    new Fixture({
+        name:"FixtureD",
+        status:1,
+    }),
+    new Fixture({
+        name:"FixtureE",
+        status:0,
+    }),
+    new Fixture({
+        name:"FixtureF",
+        status:1,
+    }),
+    new Fixture({
+        name:"FixtureG",
+        status:1,
+        url:otheruui
+    }),
+    new Fixture({
+        name:"FixtureH",
+        status:0,
+    }),
+    new Fixture({
+        name:"FixtureI",
         status:1,
     }),
 
