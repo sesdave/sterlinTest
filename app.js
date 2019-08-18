@@ -43,7 +43,7 @@ app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(cors());
 
-/* const sessionStore = new MongoStore({
+const sessionStore = new MongoStore({
   mongooseConnection: mongoose.connection
 })
 //app.use(validationResult());
@@ -56,7 +56,7 @@ app.use(session({
     secure: true
   }
 }))
- */
+
 app.use(passport.initialize())
 app.use(passport.session())
 
