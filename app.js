@@ -31,11 +31,11 @@ mongoose.connect(process.env.MONGODB_URI,{
     useCreateIndex:true
 }).then(()=>console.log("Database Connected"));
 
-/*app.use(rateLimit({
+app.use(rateLimit({
     store: new RedisStore({ enableOfflineQueue: false }),
     windowMs: 15 * 60 * 1000, // 15 minutes
     max: 100 // limit each IP to 100 requests per windowMs
-  }));*/
+  }));
 
 app.use(morgan('dev'));
 app.use(bodyParser.json());
