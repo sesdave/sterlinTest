@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "pm2 start start.js",
+    "start": "pm2 start.js",
     "test": "jest",
     "test:watch": "jest --watch"
   },
