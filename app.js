@@ -47,7 +47,7 @@ const sessionStore = new MongoStore({
   mongooseConnection: mongoose.connection
 })
 //app.use(validationResult());
-app.use(session({
+/* app.use(session({
   secret: tokenSecret,
   store: sessionStore,
   saveUninitialized: false,
@@ -55,7 +55,7 @@ app.use(session({
   cookie: {
     secure: true
   }
-}))
+})) */
 
 app.use(passport.initialize())
 app.use(passport.session())
