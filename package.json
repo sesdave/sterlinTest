@@ -2,6 +2,9 @@
   "name": "sterlin",
   "version": "1.0.0",
   "description": "",
+  "engines": {
+    "node": "6.11.1"
+  },
   "scripts": {
     "preinstall": "npm install pm2 -g",
     "start": "pm2 start start.js",
