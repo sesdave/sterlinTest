@@ -37,7 +37,7 @@
     "rate-limit-redis": "^1.6.0",
     "redis": "^2.8.0",
     "uuid": "^3.3.2",
-    "validator": "^11.1.0"
+    "validator": "^13.7.0"
   },
   "devDependencies": {
     "jest": "^24.8.0",
